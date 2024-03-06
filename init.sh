@@ -99,7 +99,7 @@ EOF
   fi
 
   # 下载需要的应用
-  DASHBOARD_LATEST=$(wget -qO- "https://api.github.com/repos/naiba/nezha/releases/latest" | awk -F '"' '/"tag_name"/{print $4}')
+  DASHBOARD_LATEST="v0.16.3"
   wget -O /tmp/dashboard.zip ${GH_PROXY}https://github.com/naiba/nezha/releases/download/$DASHBOARD_LATEST/dashboard-linux-$ARCH.zip
   unzip /tmp/dashboard.zip -d /tmp
   mv -f /tmp/dist/dashboard-linux-$ARCH $WORK_DIR/app
